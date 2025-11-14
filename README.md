@@ -27,6 +27,7 @@ pip install numpy pandas matplotlib scikit-learn
 
 2. **Run cells top-to-bottom.** The notebook will:
    - Generate the **offline bank** for pretraining.
+     - Simulator state clipping (VDP & Tanks): We clip simulator states each step for stability, and this applies to all methods (TS-pre, TS-fine, PEM, Dual-EKF) since they         all use the same data-generating simulator.
    - **Pretrain** the MLP head (**TS-pre**).
    - Run **Monte-Carlo (MC)** evaluations for each OOD scenario:
      - **Gate** (OOD detection in whitened feature space)  
